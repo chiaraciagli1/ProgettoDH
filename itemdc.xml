@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collezione>
+	<item numero="0900266310" xml:id="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0900266310.html">
+		<identificativo>https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900266310</identificativo>
+		<titolo>senza titolo. soggetto astratto</titolo>
+		<descrizione>
+		<immagine sorgente="img/ICCD15568573_OA-266310.JPG"/>L'opera è stata esposta alla I Biennale del Museo progressivo d'arte contemporanea di Livorno, che l'ha poi acquisita, assieme a "Senza titolo" (1968) dello stesso autore; di Calzolari è presente ai Bottini dell'Olio il "Quadro per Ginevra" (inv. 1991/194; v. scheda n. 09/ 00266396) già VIII Premio Modigliani. Il linguaggio dell'autore, cha ha esordito con ascendenze pop ed è passato poi al comportamentismo, rientra nella cosiddetta 'arte povera' con utilizzo di materiali ed oggetti eterogenei uniti nelle installazioni a formare una dimensione fiabesca. Al pannello in oggetto erano unite due lampade non rintracciate
+		</descrizione>
+		<metadata 
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:xsi="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0900266310.html" 
+> 
+	<dc:title>senza titolo soggetto astratto (dipinto)</dc:title> 
+	<dc:creator>Pier Paolo Calzolari</dc:creator>
+	<dc:date>1969</dc:date> 
+	<dc:description>Pannello in panno bianco con disegno a matita ed applicazione di fiori secchi rossi. Sul retro la firma  </dc:description> 
+	<dc:publisher>Ministero della cultura</dc:publisher>
+	<dc:type>dipinto</dc:type> 
+	<dc:identifier>0900266310 </dc:identifier> 
+	<dc:language>EN IT</dc:language>
+	<dc:coverage>Livorno (LI) </dc:coverage> 
+	<dc:rights>proprietà Ente pubblico territoriale</dc:rights>
+</metadata>
+	</item>
+</collezione>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<persona numero="00001561" xml:id="https://dati.beniculturali.it/lodview-arco/resource/Agent/d5c762e99886af62cd5e788b281e27e6.html">
+		<label>Calzolari Pier Paolo - 1943/</label> 
+	<agentDate>1943/</agentDate>
+	<agentLocalIdentifier>00001561</agentLocalIdentifier> 
+	<name>Calzolari Pier Paolo - 1943/</name> 
+	<dateOfBirth>Ministero della cultura</dateOfBirth>
+	<familyName>Calzolari</familyName> 
+	<type>cpv:Person</type>
+	<HasBirthPlace>Bologna</HasBirthPlace> 
+	<hasSex>M</hasSex> 
+	<metadata 
+
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:xsi="https://dati.beniculturali.it/lodview-arco/resource/Agent/d5c762e99886af62cd5e788b281e27e6.html"> 
+
+	<dc:label>Calzolari Pier Paolo - 1943/</dc:label> 
+	<dc:agentDate>1943/</dc:agentDate>
+	<dc:agentLocalIdentifier>00001561</dc:agentLocalIdentifier> 
+	<dc:name>Calzolari Pier Paolo - 1943/</dc:name> 
+	<dc:dateOfBirth>Ministero della cultura</dc:dateOfBirth>
+	<dc:familyName>Calzolari</dc:familyName> 
+	<dc:type>cpv:Person</dc:type> 
+	<dc:HasBirthPlace>Bologna</dc:HasBirthPlace> 
+	<dc:hasSex>M</dc:hasSex> 
+</metadata>
+</persona>
