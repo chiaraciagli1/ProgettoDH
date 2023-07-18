@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Arte Povera italiana</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"/>
+  <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Trirong">
+   <!-- script -->
+   <script type="text/javascript"></script>
+        <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+<script>
+var x, i, j, l, ll, selElmnt, a, b, c;
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+      e.stopPropagation();
+      closeAllSelect(this);
+      this.nextSibling.classList.toggle("select-hide");
+      this.classList.toggle("select-arrow-active");
+    });
+}
+function closeAllSelect(elmnt) {
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+document.addEventListener("click", closeAllSelect);
+</script>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+ </head>
+  <body>
+ <!-- header -->
+  <header>
+  <div class="titolo">
+  <h1>Arte Povera italiana </h1>
+  <h2><strong><em><font color="darkred">When Attitude Becomes Form</strong></em></font></h2>
+  </div>
+<!-- Elemento nav per il menu di navigazione  -->
+ <nav><a href=index.html title="Link alla home">Home&ensp;</a>
+      <a href="#" title="Link all'introduzione">Introduzione&ensp;</a>
+      <a href="#" class="pagina" title="Link al catalogo">Catalogo&ensp;</a></nav> <div class="topnav">
+  <input type="text" placeholder="Search..">
+</div>
+  </header>
+    <!-- Elemento section per la serie delle sezioni della pagina-->
+  <section>
+  <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Filtra per :</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#about"><div class="custom-default" style="width:300px;">
+  <select><option value="1">Data opera</option>
+  </a><option value="2">1960-1965</option>
+  <option value="3">1960-1970</option>
+    <option value="4">1970-1980</option>
+    <option value="5">1980-1990</option>
+    <option value="6">1990-2000</option>
+    <option value="7">2000-2010</option>
+    <option value="8">2010-2020</option></select>
+    <select><option value="1">Titolo opera</option>
+    </a><option value="2">Lingotto</option>
+    <option value="3">Untitled</option>
+    <option value="4">I Quadri specchianti</option>
+    <option value="5">Struttura che mangia</option>
+    <option value="6">Ruderi sul prato</option>
+    <option value="7">Italia all'asta</option>
+    <option value="8">Mappa</option>
+    <option value="9">Soggetto astratto</option>
+    <option value="10">Stella calibrata</option></select>
+    <select><option value="1">Tipologia opera</option>
+    </a><option value="2">dipinto</option>
+    <option value="3">video</option>
+    <option value="4">documento</option>
+    <option value="5">Scultura</option>
+    <option value="6">fotografia</option></select>
+    <select><option value="1">Materiale opera</option>
+    </a><option value="2">legno</option>
+    <option value="3">plastica</option>
+    <option value="4">feltro</option>
+    <option value="5">panno</option></select>
+    <select><option value="1">Supporto opera</option>
+    </a><option value="2">carta</option>
+    <option value="3">lino</option>
+    <option value="4">tavola</option>
+    <option value="5">muro</option>
+    <option value="6">tela</option>
+    <option value="7">rame</option>
+    <option value="8">vetro</option></select></div>
+    </section>
+
+  <section>
+  </div>
+</div> <h2>CATALOGO</h2>
+
+<div id="">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  
+  <button class="btn" onclick="filterSelection('Mario Merz')"> Mario Merz
+  </button>
+  <button class="btn" onclick="filterSelection('Marisa Merz')"> Marisa Merz</button>
+  <button class="btn" onclick="filterSelection('Michelangelo PistolettO')"> Michelangelo Pistoletto</button>
+  <button class="btn" onclick="filterSelection('Giovanni Anselm')"> Giovanni Anselmo</button>
+  <button class="btn" onclick="filterSelection('Pino Pascali')"> Pino Pascali</button>
+  <button class="btn" onclick="filterSelection('Jannis Kounellis')"> Jannis Kounellis</button>
+  <button class="btn" onclick="filterSelection('Luciano Fabro')"> Luciano Fabro</button>
+  <button class="btn" onclick="filterSelection('Alighiero Boetti')">Alighiero Boetti</button>
+  <button class="btn" onclick="filterSelection('Pier Paolo Calzolari')"> Pier Paolo Calzolari</button>
+  <button class="btn" onclick="filterSelection('Gilberto Zorio')">Gilberto Zorio</button>
+</div>
+  </section>
+  <section>
+<center>
+<div class="row">
+  <div class="content">
+    <div class="content">
+      <img src="img/AR00608_10.jpg" alt="Mario Merz" style="width:75%">
+      <h2>Mario Merz</h2>
+      <p>Lingotto, 1968</p>
+       <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content">
+    <img src="img/1mar0771w.jpg.webp" alt="Marisa Merz" style="width:75%">
+      <h2>Marisa Merz</h2>
+      <p>Untitled, 1979</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content">
+    <img src="img/MICHELANGELO_PISTOLETTO-I_Quadri_Specchianti_2023_QSda.jpg.webp" alt="Michelangelo Pistoletto" style="width:75%">
+      <h2>Michelangelo Pistoletto</h2>
+      <p>I Quadri Specchianti, 2023</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  
+  <div class="content">
+    <div class="content">
+      <img src="img/304cac30e0ba5998e3b031a3e1bdc99a.jpg" alt="Giovanni Anselmo" style="width:75%">
+      <h2>Giovanni Anselmo</h2>
+      <p>Entrare nell'opera, 1971</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content">
+    <img src="img/ICCD11306470_Pascali- Ruderi sul prato 1964 G 3945.jpg" alt="Pino Pascali" style="width:75%">
+      <h2>Pino Pascali</h2>
+      <p>Ruderi sul prato, 1964</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content">
+    <img src="img/Kounellis_Untitled_1959.jpg" alt="Jannis Kounellis" style="width:75%">
+      <h2>Jannis Kounellis</h2>
+      <p> Untitled, 1959</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="content">
+      <img src="img/5D65928.jpg" alt="Luciano Fabro" style="width:75%">
+      <h2>Luciano Fabro</h2>
+      <p>Italia all'asta, 1994</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content">
+    <img src="img/Alighiero-Boetti-Mappa-Map-1989-91-259-x-580cm-est-in-excess-of-8-million.webp" alt="Alighiero Boetti" style="width:75%">
+      <h2>Alighiero Boetti</h2>
+      <p>Mappa, 1989-91</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content">
+    <img src="img/ICCD15568573_OA-266310.JPG" alt="Pier Paolo Calzolari" style="width:75%">
+      <h2>Pier Paolo Calzolari</h2>
+      <p>Senza titolo. Soggetto astratto, 1969</p>
+      <a href="item.html" title="Link all'opera">Vai all'opera</a>
+    </div>
+
+    <div class="content">
+    <div class="content">
+    <img src="img/ZORIO-STELLA-CALIBRATA-VERTICAL.jpg" alt="Gilberto Zorio" style="width:75%">
+      <h2>Gilberto Zorio</h2>
+      <p>Stella calibrata, 2016</p>
+      <a href="#" class="btn default" title="Vai alle opere">Vai all'opera</a>
+    </div>
+  </div>
+  </center>
+   </section>
+<section>
+ <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a class="active" href="#">1</a>
+    <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+    <div class="descrizione">
+      <p><a href="#top">Torna su</a></p></div>
+      <div class="descrizione1">
+      <p> <a href="#" title="Credits">Credits</a>  |  <a href="#" title="Licenze">Licenze</a></p></div>
+    </div>
+  </section>
+
+    <!-- footer -->
+    <footer>
+          <p>&copy; Copyright (c) Chiara Ciagli, 2023 - Corso di Digital Humanities e Patrimonio Culturale</p>
+        </footer>
+ </body>
+</html>
